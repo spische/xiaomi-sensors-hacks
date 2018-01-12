@@ -294,3 +294,8 @@ Può essere utilizzato per segnalare una scossa sisimica, se abbastanza sensibil
 
 | Questi sono solo alcuni dei possibili sensori utilizzabili, cercherò di aggiornare la lista nel tempo.
 | Se avete alcune idee aprirò un issue apposito per suggerirle.
+
+
+Ringrazio Enrico__ per l'idea
+
+.. __: https://t.me/Illoso
