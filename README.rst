@@ -27,14 +27,12 @@ Vantaggi:
 
 - è il più economico (con le offerte arriva a costare € 3,5 circa)
 
-- è possibile utilizzare il case orginale anche dopo la modifica
-
 - essendo un sensore binario, il sistema di funzionamento è semplice 
 
 
 La modifica vera e propria consiste nel saldare due cavetti (o direttamente un componente) ai due pin sulla board del sensore.
 
-Nel sensore originale ai due pin è saldato un reed switch, un sensore a lamelle magnetico.
+Nel sensore originale ai due pin è saldato un reed switch, un sensore a lamine magnetico.
 Andando a saldare uno switch esterno sui due pin, è possibile utilizzarlo per chiudere e aprire il circuito e quindi inviare il segnale al gateway.
 
 Volendo si potrebbe anche dissaldare il componente originale, ma è generalmente sconsigliato, tranne nel caso in cui dobbiate posizionare il sensore vicino a magneti.
