@@ -270,9 +270,9 @@ Mercury switch:
 Sensore vibrazione
 ------------------
 
-Sono dei piccoli cilindri al centro dei quali è posto un pin, attorno al pin vi è una molla avvolta attorno al pin.
+Sono dei piccoli cilindri al centro dei quali è posto un pin, vi è poi una molla avvolta attorno al pin.
 Nel caso di vibrazioni la molla farà contatto con il pin chiudendo il circuito.
-Ne esistono diversi tipi alcuni più facili/difficili da attivare e alcuni regolabili.
+Ne esistono diversi tipi con diverse sensibilità e alcuni regolabili.
 
 Può essere utilizzato per segnalare una scossa sisimica, se abbastanza sensibile, può essere anche utile controllando i log.
 
