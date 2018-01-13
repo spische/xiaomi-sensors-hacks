@@ -1,18 +1,19 @@
 **(english coming soon)**
 
-Questo repository è un insieme di guide, immagini e idee riguardanti la modifica dei sensori Xiaomi/Aqara
+Questo repository è un insieme di guide, immagini e idee riguardanti la modifica dei sensori Xiaomi/Aqara.
+
+Le modifiche sono solamente hardware, l'idea è di poter utilizzare i sensori modificati con il gateway Lumi e l'app MiHome.
 
 E' possibile "hackerare"/modificare alcuni sensori Xiaomi per poterli utilizzare in modo alternativo.
-
-Dal sensore originale è possibile creare altri tipi di sensori, utilizzabili con MiHome e con qualsiasi sistema di home automation (Domoticz, Home Assistant, OpenHAB...)
+Dal sensore originale è possibile creare altri tipi di sensori, utilizzabili con MiHome e con qualsiasi sistema di home automation (Domoticz, Home Assistant, OpenHAB...).
+Vorrei precisare che utilizzando uno di questi sistemi c'è  molta più libertà nelle automazione, nella customizzazione e nell'utilizzo in generale del sensore modificato
 
 
 | Ora come ora, l'unico sensore su cui ho testato la modfica è il Door/Window Sensor, per cui la guida rigurderà principalmente questo.
 |
-| *Domani dovrebbero arrivarmi altri switch, per cui ne potrò sacrificare uno per poterlo modificare.*
-| *Nei prossimi giorni aggiungerò una guida anche per lo switch.*
+| *In questi giorni mi sono arrivati altri Switch, per cui a breve arriverà una guida anche su questi e una raccolta dei*
 |
-| L'hack funziona in modo analogo anche sugli altri sensori, per esempio lo Switch Xiaomi è già stato testato da altri ed è funzionante.
+| L'hack funziona in modo analogo anche sugli altri sensori. Ogni sensore ha la possibilità di essere utilizzato in modi differenti.
 | Nel caso abbiate domande potete contattarmi su Telegram: https://t.me/pisch3
 
 =========================
@@ -172,18 +173,12 @@ Ricordatevi di mettere in corto circuito le due fasi con un morsetto, in modo da
 
 .. image:: sensors/door_sensor_lights_switch.JPG
 
-
 (DEVIATORI)
 ^^^^^^^^^^^
-
-Per quanto riguarda i deviatori non è possibile utilizzare questo sensore dall'app MiHome, in quanto i due interruttori fittizi andrebbero in conflitto.
-E' possibile invece utilizzare gli Xiaomi Switch con i deviatori e l'app MiHome.
-A breve posterò una guida anche su quelli, me ne stanno arrivando 4 da Gerabest e per ora non posso sacrificarne nessuno.
-
-Nel caso utilizziate un sistema di domotica, è possibile mettendo come condizioni il cambio stato del sensore e lo stato della lampadina, 
-di conseguenza se la lampadina è accesa e il sensore cambia stato la lampadina si spegne e viceversa.
-Dovreste ovviamente trovare quali cavi se collegati accendono la luce, a quel punto cortocircuitarli con un morsetto e isolare il rimanente. Tutto questo con l'elettricità 
-
+  
+Per quanto riguarda i deviatori dovreste trovare quali cavi, se collegati, accendono la luce, a quel punto cortocircuitarli con un morsetto e isolare il rimanente. Tutto questo con l'alimentazione elettrica scollegata. 
+In questo modo la lampadina sarà sempre alimentata.
+  
 Non avendo il sensore esposto all'esterno potete evitare, in questo caso, di forare il case.
 
 ------------------------------------------------------------------------------------------------------------
