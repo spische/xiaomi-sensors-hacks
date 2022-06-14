@@ -187,10 +187,6 @@ Può essere utilizzato anche come sensore di allagamento e per altri scopi.
 .. image:: sensors/rain_sensor.jpg
 .. image:: sensors/rain_sensor_connected.png
 
-**Dove acquistarlo:**
-
-Banggood: https://goo.gl/KnYUva
-
 ------------------------------------------------------------------------------------------------------------
 
 Sensore temperatura
@@ -204,11 +200,6 @@ E' anche possibile scegliere se normalmente rimangono aperti o chiusi.
 Con alcuni è anche possibile regolare a quale temperatura si attiverà.
 
 .. image:: sensors/termofusibile.jpg
-
-**Dove acqusitarlo:**
-
-| Amazon: https://goo.gl/UBRmeo
-| Banggood (con regolazione temepratura): https://goo.gl/G8ZETr
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -225,16 +216,6 @@ Le sue funzioni sono abbastanza limitate utilizzando MiHome.
 .. image:: sensors/push_button_red.jpg
 .. image:: sensors/touch_module.jpg
 
-**Dove acquistarlo:**
-
-Pulsante:
-  - Amazon: https://goo.gl/Q6igYU
-  - Banggood: https://goo.gl/Cdtn7V
-
-Sensore Touch: 
-  - Amazon: https://goo.gl/RBqrD7
-  - Banggood: https://goo.gl/4Qmpqx
-
 ------------------------------------------------------------------------------------------------------------
 
 Sensore inclinazione
@@ -244,16 +225,6 @@ Esistono sia con una semplice pallina di metallo sia con una goccia di mercurio.
 A una certa inclinazione la pallina, a causa della gravità, scivolera in uno dei due estremi del contenitore connettendo i due pin e quindi chiudendo il circuito.
 
 .. image:: sensors/mercury_tilt_switch.jpg
-
-**Dove acquistarlo:**
-
-Tilt ball:
-  - Amazon: https://goo.gl/14N5QR
-  - Banggood: https://goo.gl/22jCwY / https://goo.gl/PCYEYB
-
-Mercury switch:
-  - Amazon: https://goo.gl/F6v1qo
-  - Banggood: https://goo.gl/uYiWaK
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -267,11 +238,6 @@ Ne esistono diversi tipi con diverse sensibilità e alcuni anche regolabili.
 Può essere utilizzato per segnalare una scossa sisimica, se abbastanza sensibile.
 
 .. image:: sensors/vibration_sensor.jpg
-
-**Dove acquistarlo:**
-
-| Banggood (regolabile): https://goo.gl/VMp7yR
-| Banggood (alta sensibilità): https://goo.gl/nBU6zC
 
 -----------------------------------------------------------------------------------------------------
 
