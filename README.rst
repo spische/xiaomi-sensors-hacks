@@ -1,4 +1,4 @@
-`ITALIAN <README_IT>`.
+Italian :italian:`ita <README_IT>`.
 
 This repository is a collection of guides, images, and ideas regarding the modification of Xiaomi/Aqara sensors.
 
@@ -65,19 +65,19 @@ Opening
 
 Opening is relatively easy. First, locate the groove on the short side of the sensor.
 
-[insert image: teardown/door_sensor.jpg]
+.. insert image:: teardown/door_sensor.jpg
 
 Leverage with a screwdriver, without applying too much force, to avoid damaging the case.
 
-[insert image: teardown/opening.jpg]
+.. insert image:: teardown/opening.jpg
 
 Now, remove the CR1632 battery.
 
-[insert image: teardown/opened.jpg]
+.. insert image:: teardown/opened.jpg
 
 Now you can see the board. To remove it, leverage again in one of the slots between the case and the board. You can use a toothpick, just a little force will make it pop out.
 
-[insert image: teardown/door_sensor_board.png]
+.. insert image:: teardown/door_sensor_board.png
 
 Soldering
 ---------
@@ -86,11 +86,11 @@ Now position the board so that it stays still, if you don't have a third hand, u
 
 Locate the two pins connected to the reed switch.
 
-[insert image: soldering/reed_switch_pins.png]
+.. insert image:: soldering/reed_switch_pins.png
 
 Now take the electrical wire and cut two sections of 10cm each, don't worry about the length, we'll adjust it later. Strip the two ends of the wires, twist the filaments, and cut again to leave 3/4 mm of copper. Solder some solder on both pins, and then by re-melting the solder on the pins, position and solder the two wires.
 
-[insert image: soldering/soldered_door_sensor.png]
+.. insert image:: soldering/soldered_door_sensor.png
 
 Check that you haven't made any bridges and that the wires are well connected. If not, re-melt the solder, and depending on the case, add or remove some solder.
 
@@ -109,15 +109,15 @@ Drilling the Case
 
 Reinsert the board into the case and mark a point with the pencil corresponding to the two pins.
 
-[insert image: drill/drill_door_sensor.png]
+.. insert image:: drill/drill_door_sensor.png
 
 Now drill the case with a bit slightly larger than the wire diameter.
 
-[insert image: drill/wire_through.png]
+.. insert image:: drill/wire_through.png
 
 Now you can connect any button, switch, light switch, and an infinite number of sensor-switches.
 
-[insert image: sensors/door_sensor_in_place.png]
+.. insert image:: sensors/door_sensor_in_place.png
 
 Now let's see some of the many possibilities.
 
@@ -137,7 +137,7 @@ Disconnect the power supply to the house, disassemble the switch, and disconnect
 
 Connect the two wires from the sensor to the switch, don't forget the battery. Now you have a wireless light switch. Remember to short-circuit the two phases with a clip, so the bulb remains powered.
 
-[insert image: sensors/door_sensor_lights_switch.JPG]
+.. insert image:: sensors/door_sensor_lights_switch.JPG
 
 (DEVICERS)
 ^^^^^^^^^^^
@@ -157,8 +157,8 @@ In this case, when it's not raining, our sensor will be open, and when it's rain
 
 It can also be used as a flood sensor and for other purposes.
 
-[insert image: sensors/rain_sensor.jpg]
-[insert image: sensors/rain_sensor_connected.png]
+.. insert image:: sensors/rain_sensor.jpg
+.. insert image:: sensors/rain_sensor_connected.png
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -171,7 +171,7 @@ You can choose the temperature at which the switch will open or close the circui
 
 With some, it's also possible to adjust at which temperature they will activate.
 
-[insert image: sensors/termofusibile.jpg]
+.. insert image:: sensors/termofusibile.jpg
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -184,8 +184,8 @@ It's also possible to connect capacitive touch sensors, which work the same way 
 
 Its functions are quite limited when using MiHome.
 
-[insert image: sensors/push_button_red.jpg]
-[insert image: sensors/touch_module.jpg]
+.. insert image:: sensors/push_button_red.jpg
+.. insert image:: sensors/touch_module.jpg
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -194,7 +194,7 @@ Tilt sensor
 
 These exist with both a simple metal ball and a drop of mercury. At a certain inclination, the ball, due to gravity, will slide to one of the two ends of the container, connecting the two pins and thus closing the circuit.
 
-[insert image: sensors/mercury_tilt_switch.jpg]
+.. insert image:: sensors/mercury_tilt_switch.jpg
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -205,7 +205,7 @@ These are small cylinders with a pin in the center, and there's a coil wrapped a
 
 It can be used to indicate an earthquake if sensitive enough.
 
-[insert image: sensors/vibration_sensor.jpg]
+.. insert image:: sensors/vibration_sensor.jpg
 
 ------------------------------------------------------------------------------------------------------------
 
