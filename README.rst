@@ -1,4 +1,4 @@
-Italian `ita <README_IT.rst>`.
+Italian :download:`ita <README_IT.rst>`.
 
 This repository is a collection of guides, images, and ideas regarding the modification of Xiaomi/Aqara sensors.
 
