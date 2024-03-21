@@ -1,3 +1,5 @@
+.. _italian_readme:
+
 Questo repository è un insieme di guide, immagini e idee riguardanti la modifica dei sensori Xiaomi/Aqara.
 
 Le modifiche sono solamente lato hardware, l'idea è di poter utilizzare i sensori modificati con il gateway Lumi e l'app MiHome.
