@@ -1,250 +1,218 @@
-Questo repository è un insieme di guide, immagini e idee riguardanti la modifica dei sensori Xiaomi/Aqara.
+`ITALIAN <README_IT>`.
 
-Le modifiche sono solamente lato hardware, l'idea è di poter utilizzare i sensori modificati con il gateway Lumi e l'app MiHome.
+This repository is a collection of guides, images, and ideas regarding the modification of Xiaomi/Aqara sensors.
 
-E' possibile "hackerare"/modificare alcuni sensori Xiaomi per poterli utilizzare in modo alternativo.
-Dal sensore originale è possibile creare altri tipi di sensori, utilizzabili con MiHome e/o con qualsiasi sistema di home automation (Domoticz, Home Assistant, OpenHAB...).
-Con l'utilizzo di questi sistemi c'è molta più libertà nelle automazione, nella customizzazione e nell'utilizzo in generale del sensore modificato
+The modifications are purely hardware-based, with the idea of being able to use the modified sensors with the Lumi gateway and MiHome app.
 
+It's possible to "hack"/modify some Xiaomi sensors to use them in alternative ways. From the original sensor, it's possible to create other types of sensors, usable with MiHome and/or any home automation system (Domoticz, Home Assistant, OpenHAB, etc.). With the use of these systems, there is much more freedom in automation, customization, and general usage of the modified sensor.
 
-Al momento, l'unico sensore su cui ho testato la modfica è il Door/Window Sensor, per cui la guida rigurderà principalmente questo.
-L'hack funziona in modo analogo anche sugli altri sensori. Ogni sensore ha la possibilità di essere utilizzato in modi differenti.
+Currently, the only sensor I've tested the modification on is the Door/Window Sensor, so the guide will mainly focus on this. The hack works similarly on other sensors. Each sensor has the potential to be used in different ways.
 
 =========================
 Xiaomi Door/Window Sensor
 =========================
 
-Ci sono alcuni motivi per cui preferisco questo sensore al posto di altri, come per esempio lo switch.
+There are several reasons why I prefer this sensor over others, such as the switch.
 
-Vantaggi:
+Advantages:
 
-- è il più piccolo tra tutti i sensori Xiaomi
+- It's the smallest among all Xiaomi sensors.
+- It's the cheapest (it can even cost around €3.5).
+- Being a binary sensor, the operating system is very simple.
 
-- è il più economico (arriva a costare anche € 3,5 circa)
+The actual modification consists of soldering two wires (or directly a component) to the two pins on the sensor's board.
 
-- essendo un sensore binario, il sistema di funzionamento è molto semplice 
+In the original sensor, a reed switch, a magnetic laminate sensor, is soldered to the two pins. By soldering an external switch to the two pins, it's possible to use it to open and close the circuit and thus send the signal to the gateway.
 
+If desired, the original component could also be desoldered, but this is generally not recommended, except in cases where you need to position the sensor near magnets.
 
-La modifica vera e propria consiste nel saldare due cavetti (o direttamente un componente) ai due pin sulla board del sensore.
+**IMPORTANT**
 
-Nel sensore originale ai due pin è saldato un reed switch, un sensore a lamine magnetico.
-Andando a saldare uno switch esterno sui due pin, è possibile utilizzarlo per chiudere e aprire il circuito e quindi inviare il segnale al gateway.
+This is the interesting part. By switch, I don't just mean a simple switch, but a set of switches that open and close the circuit based on different conditions. This part regarding switches will be detailed later; here, I'll just leave you with some of the possible uses:
 
-Volendo si potrebbe anche dissaldare il componente originale, ma è generalmente sconsigliato, tranne nel caso in cui dobbiate posizionare il sensore vicino a magneti.
+- Rain/flood sensor
+- Temperature sensor (opens/closes the circuit when a certain temperature is exceeded)
+- Vibration sensor
+- Mercury switch (usable for acceleration and as a tilt switch)
 
-
-  **IMPORTANTE**
-
-  Questa è la parte interessante.
-  Con switch non si intende solamente il semplice interruttore, ma un insieme di interruttori che aprono e chiudono il circuito in base a diverse condizioni.
-  Questa parte riguardante gli switch sarà vista in dettaglio in seguito, vi lascio qui solo alcuni dei possibili utilizzi:
-  
-  - sensore di pioggia/allagamento
-  - sensore di temperatura (superata una certa temperatura apre/chiude il circuito)
-  - sensore di vibrazione
-  - sensore a mercurio (utilizzabile per accelerazione e come tilt switch)
-
-
-Funzionamento
--------------
-
-Vi spiego semplicemente (sono abbastanza ignorante in materia) come funziona il sensore originale.
-
-Il reed switch è composto da due lamine, di materiale ferromagnetico, sigillate all'interno di un contenitore riempito di gas inerte.
-Le due lamine fuoriescono dal contenitore formando i due pin terminali.
-Nel caso del sensore porta/finestra i due terminali sono saldati ai due pin sulla scheda.
-
-Normalmente le lamine sono divise da pochi decimi di millimetro, il sensore rileva che il circuito è aperto e invia lo stato di "Aperto" al gateway.
-Avvicinando il magnete al sensore, nel caso il campo magnetico sia abbastanza forte, la forza di attrazione farà toccare le due lamine, che chiuderanno il circuito.
-A questo punto il sensore rileverà la chiusura del circuito inviando al gateway lo stato di "Chiuso".
-
-Modifica
---------
-
-Per realizzare la modifica avrete bisogno di alcuni strumenti e componenti:
-
-- saldatore e stagno
-- sensore porta/finestra xiaomi
-- filo elettrico (nè troppo piccolo nè troppo grande, dimensione consigliata: 22 gauge AWG)
-
-Opzionali:
-
-- switch/interruttore (**andremo a vedere in seguito i diversi tipi**)
-- trapano e punta, poco più grande del diametro del filo elettrico
-
-Lo switch è opzionale poichè per testare il corretto funzionamento basterà cortocircuitare i due estremi dei fili.
-Il trapano servirà per bucare il case e continuare a utilizzarlo anche dopo la modifica.
-
-
-Apertura
---------
-
-L'apetura è relativamente facile.
-Prima di tutto localizzate la scanalatura sul lato corto del sensore.
-
-.. image:: teardown/door_sensor.jpg
-
-Fate leva con un cacciavite, senza impiegare troppa forza, in modo da non rovinare il case.
-
-.. image:: teardown/opening.jpg
-
-Ora rimuovete la batteria CR1632.
-
-.. image:: teardown/opened.jpg
-
-Potete vedere ora la scheda. Per rimuoverla fate nuovamente leva in una delle fessure tra il case e la board. 
-Magari utilizzate uno stuzzicadenti, basterà poca forza per farla saltare via.
-
-.. image:: teardown/door_sensor_board.png
-
-Saldatura
+Operation
 ---------
 
-Ora posizionate la scheda in modo che stia ferma, nel caso non abbiate una terza mano aiutatevi con dello scotch.
+I'll explain simply (as I'm quite ignorant in the field) how the original sensor works.
 
-Localizzate i due pin a cui è collegato il reed switch.
+The reed switch consists of two laminates, made of ferromagnetic material, sealed inside a container filled with inert gas. The two laminates protrude from the container, forming the two terminal pins. In the case of the door/window sensor, the two terminals are soldered to the two pins on the board.
 
-.. image:: soldering/reed_switch_pins.png
+Normally, the laminates are separated by a few tenths of a millimeter. The sensor detects that the circuit is open and sends the "Open" state to the gateway. By bringing the magnet close to the sensor, if the magnetic field is strong enough, the attractive force will cause the two laminates to touch, closing the circuit. At this point, the sensor will detect the closure of the circuit and send the "Closed" state to the gateway.
 
-Ora prendete il filo elettrico e tagliatene due sezioni di 10cm, non preoccupatevi della lunghezza, andremo ad aggiustarla in seguito.
-Ora spellate i due estremi dei fili, attorcigliate i filamenti e tagliate nuovamente in modo da lasciare 3/4 mm in rame.
-Saldate un po' di stagno su entrambi i pin e poi andando a risciogliere lo stagno presente sui pin, posizionate e saldate i due fili.
+Modification
+------------
 
-.. image:: soldering/soldered_door_sensor.png
+To make the modification, you'll need some tools and components:
 
-Controllate di non aver fatto ponti e che i cavi siano ben collegati.
-Nel caso risciogliete la saldatura e, a seconda dei casi, aggiungete o togliete un po' di stagno.
+- Soldering iron and solder
+- Xiaomi door/window sensor
+- Electrical wire (not too small or too large, recommended size: 22 gauge AWG)
+
+Optional:
+
+- Switch/interchange (**we'll see the different types later**)
+- Drill and bit, slightly larger than the diameter of the electrical wire
+
+The switch is optional because to test the correct operation, it will be enough to short-circuit the two wire ends. The drill will be used to drill the case and continue using it even after the modification.
+
+Opening
+-------
+
+Opening is relatively easy. First, locate the groove on the short side of the sensor.
+
+[insert image: teardown/door_sensor.jpg]
+
+Leverage with a screwdriver, without applying too much force, to avoid damaging the case.
+
+[insert image: teardown/opening.jpg]
+
+Now, remove the CR1632 battery.
+
+[insert image: teardown/opened.jpg]
+
+Now you can see the board. To remove it, leverage again in one of the slots between the case and the board. You can use a toothpick, just a little force will make it pop out.
+
+[insert image: teardown/door_sensor_board.png]
+
+Soldering
+---------
+
+Now position the board so that it stays still, if you don't have a third hand, use some tape.
+
+Locate the two pins connected to the reed switch.
+
+[insert image: soldering/reed_switch_pins.png]
+
+Now take the electrical wire and cut two sections of 10cm each, don't worry about the length, we'll adjust it later. Strip the two ends of the wires, twist the filaments, and cut again to leave 3/4 mm of copper. Solder some solder on both pins, and then by re-melting the solder on the pins, position and solder the two wires.
+
+[insert image: soldering/soldered_door_sensor.png]
+
+Check that you haven't made any bridges and that the wires are well connected. If not, re-melt the solder, and depending on the case, add or remove some solder.
 
 Test
 ----
 
-A questo punto spellate gli altri estremi, reinserite la batteria e fate toccare i due estremi in rame.
-Aprite la vostra app e/o intefaccia (nel caso di HA, Domoticz, OpenHAB..) e vedrete la "porta/finestra" chiusa.
+At this point, strip the other ends, reinsert the battery, and touch the two copper ends together. Open your app and/or interface (in the case of HA, Domoticz, OpenHAB, etc.), and you'll see the "door/window" closed.
 
-Nel caso non dovesse funzionare, controllate:
+If it doesn't work, check:
 
-- di aver saldato correttamente i due cavetti
-- di non aver premuto il tasto di reset per sbaglio
+- That you've soldered the two wires correctly.
+- That you haven't accidentally pressed the reset button.
 
+Drilling the Case
+-----------------
 
-Forare il case
---------------
+Reinsert the board into the case and mark a point with the pencil corresponding to the two pins.
 
-Reinserite la scheda nel case e fate un segno con la matita in corrispondenza dei due pin.
+[insert image: drill/drill_door_sensor.png]
 
-.. image:: drill/drill_door_sensor.png
+Now drill the case with a bit slightly larger than the wire diameter.
 
-A questo punto andate a forare il case con una punta poco più grande del filo.
+[insert image: drill/wire_through.png]
 
-.. image:: drill/wire_through.png
+Now you can connect any button, switch, light switch, and an infinite number of sensor-switches.
 
-Ora potete collegare qualsiasi bottone, switch, interruttore della luce e un'altra infinità di sensori-switch.
+[insert image: sensors/door_sensor_in_place.png]
 
-.. image:: sensors/door_sensor_in_place.png
-
-Andiamo a vedere ora alcune tra le moltissime possibilità.
+Now let's see some of the many possibilities.
 
 ------------------------------------------------------------------------------------------------------------
 
-**TIPI DI SWITCH UTILIZZABILI**
--------------------------------
+**TYPES OF SWITCHES THAT CAN BE USED**
+--------------------------------------
 
-Interruttore della luce
------------------------
+Light switch
+------------
 
-Avendo lampadine Yeelight o altre lampadine Xiaomi in casa vi sarete sicuramente dimenticati una volta di non dover premere l'interruttore della luce, oppure qualcun'altro in casa l'ha fatto al posto vostro.
+If you have Yeelight bulbs or other Xiaomi bulbs at home, you've surely forgotten at least once not to press the light switch, or someone else in the house did it for you.
 
-Utilizzando il sensore da voi modificato è possibile ovviare a questo problema.
+By using the sensor you modified, you can overcome this problem.
 
-Staccate l’alimentazione elettrica dell’abitazione, smontate l'interruttore e scollegate le due fasi dall'interruttore.
+Disconnect the power supply to the house, disassemble the switch, and disconnect the two phases from the switch.
 
-Collegate i due cavetti dal sensore all'interruttore, ricordatevi la batteria. Ora avete un interruttore della luce wireless.
-Ricordatevi di mettere in corto circuito le due fasi con un morsetto, in modo da mantenere la lampadina alimentata.
+Connect the two wires from the sensor to the switch, don't forget the battery. Now you have a wireless light switch. Remember to short-circuit the two phases with a clip, so the bulb remains powered.
 
-.. image:: sensors/door_sensor_lights_switch.JPG
+[insert image: sensors/door_sensor_lights_switch.JPG]
 
-(DEVIATORI)
+(DEVICERS)
 ^^^^^^^^^^^
-  
-Per quanto riguarda i deviatori dovreste trovare quali cavi, se collegati, accendono la luce, a quel punto cortocircuitarli con un morsetto e isolare il rimanente. Tutto questo con l'alimentazione elettrica scollegata. 
-In questo modo la lampadina sarà sempre alimentata.
-  
-Non avendo il sensore esposto all'esterno potete evitare, in questo caso, di forare il case.
+
+As for the deviators, you should find out which wires, if connected, turn on the light, then short-circuit them with a clip and isolate the remaining ones. All this with the power supply disconnected. This way, the bulb will always be powered.
+
+Since the sensor is not exposed to the outside, you can avoid drilling the case in this case.
 
 ------------------------------------------------------------------------------------------------------------
 
-Sensore pioggia/allagamento
----------------------------
-
-Questo switch consiste in una semplice scheda su cui sono stampate due serpentine.
-
-L'acqua posta sulla scheda agirà da conduttore chiudendo il circuito.
-
-In questo caso quando non piove il nostro sensore risulterà aperto e quando piove chiuso.
-
-Può essere utilizzato anche come sensore di allagamento e per altri scopi.
-
-.. image:: sensors/rain_sensor.jpg
-.. image:: sensors/rain_sensor_connected.png
-
-------------------------------------------------------------------------------------------------------------
-
-Sensore temperatura
--------------------
-
-Per quanto riguarda la temperatura è possibile utilizzare i termofusibili che a una certa temperatura si chiudono/aprono.
-
-E' possibile scegliere la temperatura alla quale lo switch aprirà o chiuderà il circuito.
-E' anche possibile scegliere se normalmente rimangono aperti o chiusi.
-
-Con alcuni è anche possibile regolare a quale temperatura si attiverà.
-
-.. image:: sensors/termofusibile.jpg
-
-------------------------------------------------------------------------------------------------------------
-
-Sensore touch/bottone
----------------------
-
-E' possibile collegare qualsiasi tipo di pulsante, da quelli più semplici fino ai panic button.
-
-E' inoltre possibile collegare sensori touch capacitivi, che funzionano allo stesso modo dei pulsanti normali, 
-semplicemente al posto del bottone fisico c'è una superficie touch che, toccandola con un dito, fa chiudere il circuito.
-
-Le sue funzioni sono abbastanza limitate utilizzando MiHome.
-
-.. image:: sensors/push_button_red.jpg
-.. image:: sensors/touch_module.jpg
-
-------------------------------------------------------------------------------------------------------------
-
-Sensore inclinazione
---------------------
-
-Esistono sia con una semplice pallina di metallo sia con una goccia di mercurio.
-A una certa inclinazione la pallina, a causa della gravità, scivolera in uno dei due estremi del contenitore connettendo i due pin e quindi chiudendo il circuito.
-
-.. image:: sensors/mercury_tilt_switch.jpg
-
-------------------------------------------------------------------------------------------------------------
-
-Sensore vibrazione
+Rain/flood sensor
 ------------------
 
-Sono dei piccoli cilindri al centro dei quali è posto un pin, vi è poi una molla avvolta attorno al pin.
-Nel caso di vibrazioni la molla farà contatto con il pin chiudendo il circuito.
-Ne esistono diversi tipi con diverse sensibilità e alcuni anche regolabili.
+This switch consists of a simple board on which two serpentine traces are printed. Water placed on the board will act as a conductor, closing the circuit.
 
-Può essere utilizzato per segnalare una scossa sisimica, se abbastanza sensibile.
+In this case, when it's not raining, our sensor will be open, and when it's raining, it will be closed.
 
-.. image:: sensors/vibration_sensor.jpg
+It can also be used as a flood sensor and for other purposes.
 
------------------------------------------------------------------------------------------------------
+[insert image: sensors/rain_sensor.jpg]
+[insert image: sensors/rain_sensor_connected.png]
 
-| Questi sono solo alcuni dei possibili sensori utilizzabili, cercherò di aggiornare la lista nel tempo.
-| Se avete alcune idee aprirò un issue apposito per suggerirle.
+------------------------------------------------------------------------------------------------------------
 
+Temperature sensor
+------------------
 
-Ringrazio Enrico__ per l'idea
+Regarding temperature, it's possible to use thermal fuses that close/open at a certain temperature.
+
+You can choose the temperature at which the switch will open or close the circuit. It's also possible to choose whether they normally remain open or closed.
+
+With some, it's also possible to adjust at which temperature they will activate.
+
+[insert image: sensors/termofusibile.jpg]
+
+------------------------------------------------------------------------------------------------------------
+
+Touch/button sensor
+--------------------
+
+It's possible to connect any type of button, from the simplest ones to panic buttons.
+
+It's also possible to connect capacitive touch sensors, which work the same way as normal buttons, except that instead of a physical button, there's a touch surface that, when touched with a finger, closes the circuit.
+
+Its functions are quite limited when using MiHome.
+
+[insert image: sensors/push_button_red.jpg]
+[insert image: sensors/touch_module.jpg]
+
+------------------------------------------------------------------------------------------------------------
+
+Tilt sensor
+------------
+
+These exist with both a simple metal ball and a drop of mercury. At a certain inclination, the ball, due to gravity, will slide to one of the two ends of the container, connecting the two pins and thus closing the circuit.
+
+[insert image: sensors/mercury_tilt_switch.jpg]
+
+------------------------------------------------------------------------------------------------------------
+
+Vibration sensor
+-----------------
+
+These are small cylinders with a pin in the center, and there's a coil wrapped around the pin. In case of vibrations, the coil will make contact with the pin, closing the circuit. There are different types with different sensitivities, and some are even adjustable.
+
+It can be used to indicate an earthquake if sensitive enough.
+
+[insert image: sensors/vibration_sensor.jpg]
+
+------------------------------------------------------------------------------------------------------------
+
+These are just some of the possible sensors that can be used; I'll try to update the list over time.
+If you have any ideas, I'll open a specific issue to suggest them.
+
+Special thanks to Enrico__ for the idea.
 
 .. __: https://t.me/Illoso
+
